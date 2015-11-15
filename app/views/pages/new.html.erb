@@ -1,0 +1,39 @@
+<style type="text/css">
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+</style>
+<div class="row">
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4 col-centered">
+<h1>Add New Product </h1>
+<%= form_tag '/home', { class: 'form-class', id: 'form-id', role: 'form', method: 'post' } do %>
+  <table class="table table-hover">
+  <tr>
+    <td>
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Enter</span>
+  <%= label_tag :add_name , nil, class: 'col-sm-2 control-label' %>
+</div>
+  </td>
+    <td><%= text_field_tag :add_name, nil, class: 'form-control', placeholder: 'enter' %></td>
+  </tr>
+
+    <tr>
+    <td><%= label_tag :add_price , "Enter Price" %></td>
+    <td><%= text_field_tag :add_price %></td>
+  </tr>
+    <td><%= label_tag :add_desc , "Enter Description" %></td>
+    <td><%= text_field_tag :add_desc %></td>
+  </tr>
+     <tr>
+    <td><%= label_tag :add_image , "Enter Image URL" %></td>
+    <td><%= text_field_tag :add_image %></td>
+  </tr>
+  <tr>
+
+    <td><%= submit_tag "submit contact" %></td>
+  </tr>
+  <% end %>
+    </table>

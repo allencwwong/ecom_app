@@ -1,0 +1,8 @@
+<h1>Product</h1>
+
+<p><%= image_tag @product.image %></p>
+<p><%= @product.name %></p>
+<p><%= @product.price %></p>
+<p><%= @product.description %></p>
+
+<%= link_to "Edit", "/home/#{@product.id}/edit" %> | <%= link_to "Delete", "/home/#{@product.id}", method: :delete %> 

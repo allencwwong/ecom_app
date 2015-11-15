@@ -2,7 +2,89 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// Construct Gutter Options
 
-body{
-  margin: 0 5% 0 5%;
+// 20px gutter
+.gutter-20.row {
+  margin-right: -10px;
+  margin-left: -10px;
+}
+.gutter-20 > [class^="col-"], .gutter-20 > [class^=" col-"]{
+  padding-right: 10px;
+  padding-left: 10px;
+}
+// 10px gutter
+.gutter-12.row {
+  margin-right: -6px;
+  margin-left: -6px;
+}
+.gutter-10 > [class^="col-"], .gutter-10 > [class^=" col-"]{
+  padding-right: 6px;
+  padding-left: 6px;
+}
+// 0px gutter
+.gutter-0.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+.gutter-0 > [class^="col-"], .gutter-0 > [class^=" col-"]{
+  padding-right: 0;
+  padding-left: 0;
+}
+
+// Boostrap
+
+.alert{
+  width:80%;
+  margin:auto;
+  margin-top:10px;
+}
+
+// CSS
+
+
+ul{
+  list-style: none;  
+  }
+
+.row{
+  margin: 0 10px 0 10px !important;
+}
+
+
+.productSet{
+  height:auto;
+  border:1px solid #eee;
+  border-radius:10px;
+  box-shadow: 1px 2px 8px #eee;
+  color:#333;
+  font-size:13px;
+  line-height:13px;
+  height:450px;
+
+}
+
+.productSet[value|=allen] {
+  border:1px solid red;
+  
+}
+
+.productSet:hover{
+  border:2px solid lightblue;
+}
+
+.productSet img{
+  width: 320px;
+  height: auto;
+  margin:2px 0 0 0;
+}
+
+.p_title , .p_price , .p_desc {
+  padding:1px 0 0 5px; 
+}
+
+.p_title{
+  font-size: 22px;
+  margin:0 0 5px 0;
+
 }
