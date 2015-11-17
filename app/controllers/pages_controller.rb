@@ -1,6 +1,11 @@
 class PagesController < ApplicationController
   def index
-    @products = Product.all
+
+    if params[:view] == "discounted"
+      @products = Product.where("price < ?", 2)
+    else
+      @products = Product.all 
+    end
  
   end
 
@@ -48,6 +53,7 @@ class PagesController < ApplicationController
       flash[:danger] = "Deleted!"    
     redirect_to "/home/" 
   end
+
 
   #  def parameters
   #   @message = params[:message]

@@ -1,0 +1,42 @@
+body{
+  background: url('/assets/bg.png');
+  font-family: 'Roboto', sans-serif;
+}
+
+.productSet{
+  height:auto;
+  border:2px solid #ddd;
+  border-radius:10px;
+  box-shadow: 1px 2px 8px #eee;
+  background: #fff;
+  color:#333;
+  font-size:13px;
+  line-height:13px;
+  height:450px;
+
+}
+
+.productSet[value|=fire] {
+  border:2px solid red;
+  
+}
+
+.productSet:hover{
+  border:2px solid #000;
+}
+
+.productSet img{
+  width: 80%;
+  height: auto;
+  margin:2px 5px 0 5px;
+}
+
+.p_title , .p_price , .p_desc {
+  padding:1px 0 0 5px; 
+}
+
+.p_title{
+  font-size: 22px;
+  margin:0 0 5px 0;
+
+}

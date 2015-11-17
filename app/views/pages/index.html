@@ -3,6 +3,7 @@
 </head>
 <body>
 <h1>Product List</h1>
+<p><%= link_to "Discount", "/home?view=discounted" %> | <%= link_to "Show All", "/home" %></p>
   <div class="row gutter-10">
   <% @products.each do |product| %>
 
@@ -10,8 +11,12 @@
 
   <ul class="col-xs-12 col-sm-4 col-md-3 col-lg-3 ">
   
-    <li class="productSet" value="<%= product.name %>"><img src="<%=product.image %>">
-    <div class="p_title"><%= link_to product.name, "/home/#{product.id}" %></div>
+    <li class="productSet" value="<%= product.name.downcase %>">
+    <%= link_to image_tag("#{product.image}",class:"img-responsive"), "/home/#{product.id}" %>
+
+    <div class="p_title"><%= link_to product.name, "/home/#{product.id}" %>
+</div>
+    
     <div class="p_price"><p>Price:$<%=product.price %></p></div>
     <div class="p_desc"><p><%=product.description %></p></div>
 

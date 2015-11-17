@@ -1,8 +1,20 @@
-<h1>Product</h1>
 
-<p><%= image_tag @product.image %></p>
-<p><%= @product.name %></p>
-<p><%= @product.price %></p>
-<p><%= @product.description %></p>
+  <div class="row">
+    <h1>Product</h1>
+    <h2><%= @product.sale_message %></h2>
+    <p>$<%= @product.price %></p>
+    <p>$<%= @product.tax %></p>
+    <h2>$<%= @product.total %></h2>
+    <p><%= image_tag @product.image %></p>
+    <p><%= @product.name %></p>
+    <p><%= @product.price %></p>
+    <p><%= @product.description %></p>
+    <p>Created On: <%= @product.friendly_created_at %></p>
 
-<%= link_to "Edit", "/home/#{@product.id}/edit" %> | <%= link_to "Delete", "/home/#{@product.id}", method: :delete %> 
+    <%= link_to "Edit", "/home/#{@product.id}/edit" %> | <%= link_to "Delete", "/home/#{@product.id}", method: :delete %>
+    </div> 
+
+<!--
+< product.ingeredient_list.each do |ingeredient| >
+  <li><  ingeredient ></li> 
+ end

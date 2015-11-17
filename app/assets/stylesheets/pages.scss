@@ -47,44 +47,5 @@ ul{
   list-style: none;  
   }
 
-.row{
-  margin: 0 10px 0 10px !important;
-}
 
 
-.productSet{
-  height:auto;
-  border:1px solid #eee;
-  border-radius:10px;
-  box-shadow: 1px 2px 8px #eee;
-  color:#333;
-  font-size:13px;
-  line-height:13px;
-  height:450px;
-
-}
-
-.productSet[value|=allen] {
-  border:1px solid red;
-  
-}
-
-.productSet:hover{
-  border:2px solid lightblue;
-}
-
-.productSet img{
-  width: 320px;
-  height: auto;
-  margin:2px 0 0 0;
-}
-
-.p_title , .p_price , .p_desc {
-  padding:1px 0 0 5px; 
-}
-
-.p_title{
-  font-size: 22px;
-  margin:0 0 5px 0;
-
-}
