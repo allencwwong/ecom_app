@@ -3,16 +3,17 @@
 </head>
 <body>
 <h1>Product List</h1>
-<p><%= link_to "Discount", "/home?view=discounted" %> | <%= link_to "Show All", "/home" %></p>
+<p><%= link_to "Discount", "/home?view=discounted" %> | <%= link_to "Show All", "/home" %> | <%= link_to "Lowest to Highest", "/home?view=order_ny_price" %> | <%= link_to "Highest to Lowest", "/home?view=order_by_price_desc" %> | <%= link_to "random", "/home/random" %> </p>
   <div class="row gutter-10">
   <% @products.each do |product| %>
 
-
-
   <ul class="col-xs-12 col-sm-4 col-md-3 col-lg-3 ">
   
-    <li class="productSet" value="<%= product.name.downcase %>">
-    <%= link_to image_tag("#{product.image}",class:"img-responsive"), "/home/#{product.id}" %>
+    <li class="productSet" value="<%= product.p_type.downcase %>">
+
+ 
+
+<a href="/home/<%= "#{product.id}" %>"><img src="<%= @images.where(product_id: product.id).first.image_url %>"></a>
 
     <div class="p_title"><%= link_to product.name, "/home/#{product.id}" %>
 </div>

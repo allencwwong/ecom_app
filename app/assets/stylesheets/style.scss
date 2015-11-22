@@ -12,12 +12,27 @@ body{
   color:#333;
   font-size:13px;
   line-height:13px;
-  height:450px;
+  height:350px;
 
 }
 
 .productSet[value|=fire] {
   border:2px solid red;
+  
+}
+
+.productSet[value|=water] {
+  border:2px solid lightblue;
+  
+}
+
+.productSet[value|=leaf] {
+  border:2px solid green;
+  
+}
+
+.productSet[value|=lighting] {
+  border:2px solid yellow;
   
 }
 

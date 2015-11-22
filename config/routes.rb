@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'home/:id/edit', to: 'pages#edit'
   patch '/home/:id', to:'pages#update'
   delete '/home/:id', to: 'pages#destroy'
+  post '/home/search', to: 'pages#search'
   # The priority is desbased upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

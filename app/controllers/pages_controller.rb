@@ -6,6 +6,27 @@ class PagesController < ApplicationController
     else
       @products = Product.all 
     end
+
+    if params[:view] == "order_by_price"
+      @products = Product.order(:price)
+    end
+
+    if params[:view] == "order_by_price_desc"
+      @products = Product.order(price: :desc)
+    end   
+
+    @images = Image.all
+
+
+    # if params[:view] == "random"
+    #   products = Product.all 
+    #   random_id = []
+    #   products.each do |product|
+    #     random_id << product.id 
+    #   end
+      
+    #   redirect_to "/home/#{random_id[rand(random_id.length)]}"
+    # end  
  
   end
 
@@ -25,8 +46,23 @@ class PagesController < ApplicationController
   end
 
   def show
-    id = params[:id]
-    @product = Product.find_by(id: id)
+    @id = params[:id]
+    if @id == "random"
+    @products = Product.id.sample
+    else
+    @product = Product.find_by(id: @id)
+    end
+
+    @supplier = Product.find_by(id: @id).supplier
+    
+    @image = Image.where(product_id: @id)
+    # @image.each do |images|
+    #   if images.id == @id 
+    #     return image_tag images.image_url
+    #   end
+    # end
+
+
   end
 
   def edit
@@ -54,7 +90,11 @@ class PagesController < ApplicationController
     redirect_to "/home/" 
   end
 
-
+  def search
+    search_term = params[:search]
+    @products = Product.where("name LIKE ?", "%#{search_term}%")
+    render :index
+  end
   #  def parameters
   #   @message = params[:message]
   # end 
@@ -64,3 +104,6 @@ class PagesController < ApplicationController
   # end
 
 end
+
+
+
