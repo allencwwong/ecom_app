@@ -9,7 +9,7 @@
 
   <ul class="col-xs-12 col-sm-4 col-md-3 col-lg-3 ">
   
-    <li class="productSet" value="<%= product.p_type.downcase %>">
+    <li class="productSet" >
 
  
 <% if product.images.first %>
@@ -21,7 +21,7 @@
     
     <div class="p_price"><p>Price:$<%=product.price %></p></div>
     <div class="p_desc"><p><%=product.description %></p></div>
-    <div class="p_type" value="<%= product.p_type.downcase %>"><p><%=product.p_type %></p></div>
+    <div class="p_type"><p><%=product.p_type %></p></div>
 
     </li>
 
