@@ -39,8 +39,9 @@ class PagesController < ApplicationController
     @add_price = params[:add_price] 
     @add_desc = params[:add_desc]
     @add_image = params[:add_image]
-#    @add_type = params[:add_type]
-    Product.create(name: @add_name,price: @add_price, description: @add_desc, image: @add_image)
+    @add_type = params[:add_type]
+    Product.create(name: @add_name,price: @add_price, description: @add_desc, user_id: current_user.email, p_type: @add_type)
+
       flash[:success] = "Created!"    
     redirect_to "/home"
   end
@@ -52,16 +53,6 @@ class PagesController < ApplicationController
     else
     @product = Product.find_by(id: @id)
     end
-
-    @supplier = Product.find_by(id: @id).supplier
-    
-    @image = Image.where(product_id: @id)
-    # @image.each do |images|
-    #   if images.id == @id 
-    #     return image_tag images.image_url
-    #   end
-    # end
-
 
   end
 

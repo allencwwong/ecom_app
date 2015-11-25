@@ -12,14 +12,16 @@
     <li class="productSet" value="<%= product.p_type.downcase %>">
 
  
+<% if product.images.first %>
+<a href="/home/<%= "#{product.id}" %>"><img class="img-responsive" src="<%= product.images.first.image_url %>"></a>
+<% end %>
 
-<a href="/home/<%= "#{product.id}" %>"><img src="<%= @images.where(product_id: product.id).first.image_url %>"></a>
-
-    <div class="p_title"><%= link_to product.name, "/home/#{product.id}" %>
-</div>
+    <h1 class="p_title"><%= link_to product.name, "/home/#{product.id}" %>
+</h1>
     
     <div class="p_price"><p>Price:$<%=product.price %></p></div>
     <div class="p_desc"><p><%=product.description %></p></div>
+    <div class="p_type" value="<%= product.p_type.downcase %>"><p><%=product.p_type %></p></div>
 
     </li>
 

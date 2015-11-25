@@ -1,6 +1,8 @@
 class Product < ActiveRecord::Base
   belongs_to :supplier
+  belongs_to :user
   has_many :images
+  has_many :orders
 
   # def ingredient_list
   #   return ingredients.split(",")
