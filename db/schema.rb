@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151124045241) do
+ActiveRecord::Schema.define(version: 20151125021317) do
 
   create_table "images", force: :cascade do |t|
     t.string   "product_id", limit: 255
@@ -24,11 +24,11 @@ ActiveRecord::Schema.define(version: 20151124045241) do
     t.integer  "user_id",    limit: 4
     t.integer  "product_id", limit: 4
     t.integer  "qty",        limit: 4
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-    t.integer  "tax",        limit: 4
-    t.integer  "subtotal",   limit: 4
-    t.integer  "total",      limit: 4
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
+    t.decimal  "tax",                  precision: 10, scale: 2
+    t.decimal  "subtotal",             precision: 10, scale: 2
+    t.decimal  "total",                precision: 10, scale: 2
   end
 
   create_table "products", force: :cascade do |t|

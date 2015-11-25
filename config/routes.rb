@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   post '/home/search', to: 'pages#search'
 
   post '/orders', to: 'orders#create' 
-
+  get '/orders/:id', to: 'orders#show'
 
   # The priority is desbased upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

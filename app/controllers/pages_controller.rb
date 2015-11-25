@@ -49,10 +49,11 @@ class PagesController < ApplicationController
   def show
     @id = params[:id]
     if @id == "random"
-    @products = Product.id.sample
+      Product.id.sample
     else
     @product = Product.find_by(id: @id)
     end
+
 
   end
 

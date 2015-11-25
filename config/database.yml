@@ -50,5 +50,7 @@ test:
 production:
   <<: *default
   database: ecom_app_production
-  username: ecom_app
-  password: <%= ENV['MYSQL-APP_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  
