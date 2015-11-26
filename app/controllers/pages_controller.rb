@@ -39,8 +39,8 @@ class PagesController < ApplicationController
     @add_price = params[:add_price] 
     @add_desc = params[:add_desc]
     @add_image = params[:add_image]
-    @add_type = params[:add_type]
-    Product.create(name: @add_name,price: @add_price, description: @add_desc, user_id: current_user.email, p_type: @add_type)
+    @add_category = params[:add_category]
+    Product.create(name: @add_name,price: @add_price, description: @add_desc, user_id: current_user.email, category: @add_category)
 
       flash[:success] = "Created!"    
     redirect_to "/home"

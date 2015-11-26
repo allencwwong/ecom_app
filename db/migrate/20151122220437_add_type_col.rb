@@ -1,5 +1,5 @@
 class AddTypeCol < ActiveRecord::Migration
   def change
-    add_column :products, :type, :string    
+    add_column :products, :category, :string    
   end
 end

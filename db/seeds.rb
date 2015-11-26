@@ -27,12 +27,12 @@ Order.create!([
   {user_id: 1, product_id: 2, qty: 3, tax: "33.75", subtotal: "375.0", total: "408.0"}
 ])
 Product.create!([
-  {name: "Bulbasaur", price: 100, image: "http://localhost:3000/assets/bulbasaur.png", description: "Leaf Pokemon with seed on it's back.", stock: true, supplier_id: 1, p_type: "leaf", user_id: 1},
-  {name: "Charmander", price: 125, image: "http://localhost:3000/assets/charmander.jpg", description: "Fire pokemon with a flame tail", stock: true, supplier_id: 1, p_type: "Fire", user_id: 1},
-  {name: "Squirtle", price: 150, image: "http://localhost:3000/assets/squirtle.jpg", description: "Water pokemon that is a turtle", stock: true, supplier_id: 2, p_type: "Water", user_id: 1},
-  {name: "Pikachu", price: 90, image: "http://localhost:3000/assets/pikachu.jpg", description: "Thunder mouse", stock: true, supplier_id: 1, p_type: "Lighting", user_id: 1},
-  {name: "Mewtwo", price: 9999, image: "", description: "Powerful Cat", stock: nil, supplier_id: 3, p_type: "Physic ", user_id: 1},
-  {name: "Mewtwo", price: 9999, image: "http://localhost:3000/assets/products/charmander-0d84e9eb23646db0d3b13730368773c92c65ad2119f0d54a32295da86fdb989a.jpg", description: "Powerful Cat", stock: nil, supplier_id: 3, p_type: "Physic ", user_id: 1}
+  {name: "Bulbasaur", price: 100, image: "http://localhost:3000/assets/bulbasaur.png", description: "Leaf Pokemon with seed on it's back.", stock: true, supplier_id: 1, category: "leaf", user_id: 1},
+  {name: "Charmander", price: 125, image: "http://localhost:3000/assets/charmander.jpg", description: "Fire pokemon with a flame tail", stock: true, supplier_id: 1, category: "Fire", user_id: 1},
+  {name: "Squirtle", price: 150, image: "http://localhost:3000/assets/squirtle.jpg", description: "Water pokemon that is a turtle", stock: true, supplier_id: 2, category: "Water", user_id: 1},
+  {name: "Pikachu", price: 90, image: "http://localhost:3000/assets/pikachu.jpg", description: "Thunder mouse", stock: true, supplier_id: 1, category: "Lighting", user_id: 1},
+  {name: "Mewtwo", price: 9999, image: "", description: "Powerful Cat", stock: nil, supplier_id: 3, category: "Physic ", user_id: 1},
+  {name: "Mewtwo", price: 9999, image: "http://localhost:3000/assets/products/charmander-0d84e9eb23646db0d3b13730368773c92c65ad2119f0d54a32295da86fdb989a.jpg", description: "Powerful Cat", stock: nil, supplier_id: 3, category: "Physic ", user_id: 1}
 ])
 Supplier.create!([
   {name: "Pallet Town", email: "ptown@kanto.com", phone: "8001234567"},

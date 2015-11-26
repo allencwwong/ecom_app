@@ -56,7 +56,7 @@ body{
   padding:5px 0 5px 0px;
 }
 
-.p_type{
+.p_category{
   width:100px;
   border:1px solid #999;
   border-radius:3px;
@@ -64,27 +64,27 @@ body{
   text-align: center
 }
 
-.p_type p{
+.p_category p{
   padding:5px 0 5px 0px;
   margin:0px;
 }
 
-.p_type[value|=fire] {
+.p_category[value|=fire] {
   background:#F75D59;
   border-color:darkred;
 }
 
-.p_type[value|=water] {
+.p_category[value|=water] {
   background:lightblue;
   border-color:skyblue;
 }
 
-.p_type[value|=leaf] {
+.p_category[value|=leaf] {
   background:lightgreen;
   border-color:green;
 }
 
-.p_type[value|=lighting] {
+.p_category[value|=lighting] {
   background:#f9e77d;
   border-color:gold;
 }
