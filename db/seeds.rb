@@ -34,8 +34,8 @@ Product.create!([
   {name: "Mewtwo", price: 9999, image: "", description: "Powerful Cat", stock: nil, supplier_id: 3, category: "Physic ", user_id: 1}
 
 ])
-Supplier.create!([
-  {name: "Pallet Town", email: "ptown@kanto.com", phone: "8001234567"},
-  {name: "Pewter City", email: "pcity@kanto.com", phone: "8661234567"},
-  {name: "Saffron City", email: "scity@kanto.com", phone: "8771234567"}
-])
+# Supplier.create!([
+#   {name: "Pallet Town", email: "ptown@kanto.com", phone: "8001234567"},
+#   {name: "Pewter City", email: "pcity@kanto.com", phone: "8661234567"},
+#   {name: "Saffron City", email: "scity@kanto.com", phone: "8771234567"}
+# ])
