@@ -1,4 +1,4 @@
-
+User.create(email: "allen@gmail.com" , password: "12345678")
 Image.create!([
   {product_id: "1", image_url: "http://localhost:3000/assets/bulbasaur.png"},
   {product_id: "1", image_url: "http://localhost:3000/assets/bulbasaur.png"},
