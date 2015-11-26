@@ -59,11 +59,11 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
-        <li><%= link_to "Sign Out", "users/sign_out", method: :delete %> </li>
+        <li><%= link_to "Sign Out", "/users/sign_out", method: :delete %> </li>
         <li><a href="#"><%= current_user.email %> is signed in</a></li>
         <% else %>
-       <li><%= link_to "Sign Up", "users/sign_up"%> </li>
-        <li><%= link_to "Sign In", "users/sign_in"%> </li>
+       <li><%= link_to "Sign Up", "/users/sign_up"%> </li>
+        <li><%= link_to "Sign In", "/users/sign_in"%> </li>
       </ul>
       <% end %>
     </div><!-- /.navbar-collapse -->
