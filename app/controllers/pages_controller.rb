@@ -1,19 +1,18 @@
 class PagesController < ApplicationController
   def index
-
+    @categories = Category.all
     if params[:view] == "discounted"
       @products = Product.where("price < ?", 2)
+    elsif params[:view] == "order_by_price"
+       @products = Product.order(:price)
+    elsif params[:view] == "order_by_price_desc"
+      @products = Product.order(price: :desc)
+    elsif params[:category]
+      @products = Category.find_by(name: params[:category]).products   
     else
       @products = Product.all 
-    end
+    end 
 
-    if params[:view] == "order_by_price"
-      @products = Product.order(:price)
-    end
-
-    if params[:view] == "order_by_price_desc"
-      @products = Product.order(price: :desc)
-    end   
 
     @images = Image.all
 
@@ -31,19 +30,25 @@ class PagesController < ApplicationController
   end
 
   def new
+    @product = Product.new
   end
 
   def create
-    @products = Product.all
+
      @add_name = params[:add_name] 
     @add_price = params[:add_price] 
     @add_desc = params[:add_desc]
     @add_image = params[:add_image]
     @add_category = params[:add_category]
-    Product.create(name: @add_name,price: @add_price, description: @add_desc, user_id: current_user.email, category: @add_category)
-
+    @product = Product.new(name: @add_name,price: @add_price, description: @add_desc, user_id: current_user.email, category: @add_category)
+    if @product.save
       flash[:success] = "Created!"    
-    redirect_to "/home"
+    redirect_to "/"
+    else
+
+      render :new
+      @show_name = @add_name
+    end
   end
 
   def show
@@ -72,14 +77,14 @@ class PagesController < ApplicationController
  #     type = params[:add_type]
       product.update(name: name,price: price, description:description, image: image)
       flash[:success] = "Updated!"
-    redirect_to "/home/#{id}"      
+    redirect_to "/#{id}"      
   end
 
   def destroy
     id = params[:id]
     Product.find_by(id: id).destroy
       flash[:danger] = "Deleted!"    
-    redirect_to "/home/" 
+    redirect_to "/" 
   end
 
   def search

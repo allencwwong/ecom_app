@@ -3,7 +3,11 @@ class Product < ActiveRecord::Base
   belongs_to :user
   has_many :images
   has_many :orders
+  has_many :categorized_products
+  has_many :categories, through: :categorized_products
 
+  validates :name, :price, presence: true
+  validates :price, numericality: true
   # def ingredient_list
   #   return ingredients.split(",")
   # end

@@ -2,6 +2,11 @@
   <div class="gutter-20">
    <div class="col-centered">
     <h1>Product</h1>
+    <ul>
+  <% if @order && @order.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  <% end %>
     <h2><%= @product.sale_message %></h2>
     <p>$<%= @product.price %></p>
     <p>$<%= @product.tax %></p>
@@ -25,13 +30,14 @@
 <%= form_tag '/orders', { class: 'form-class', id: 'form-id', role: 'form', method: 'post' } do %>
     <%= hidden_field_tag :add_product , @product.id %>
      <%= hidden_field_tag :price , @product.price %>    
-    <%= label_tag :add_qty, "Enter Qty" %><%= text_field_tag :add_qty %>
+    <%= label_tag :add_qty, "Enter Qty" %>
+    <%= text_field_tag :add_qty %>
     <a href="#"><button>Buy Now</button></a>
     <br>
     <% end %>
 <!--     End of buy now button   -->
 
-    <%= link_to "Edit", "/home/#{@product.id}/edit" %> | <%= link_to "Delete", "/home/#{@product.id}", method: :delete %>
+    <%= link_to "Edit", "/#{@product.id}/edit" %> | <%= link_to "Delete", "/#{@product.id}", method: :delete %>
     </div> 
    </div> 
 

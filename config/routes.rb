@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#index"  
-  get '/home/', to:'pages#index'
-  get 'home/new', to:'pages#new'
-  post '/home' , to:'pages#create'
-  get '/home/:id', to: 'pages#show'
-  get 'home/:id/edit', to: 'pages#edit'
-  patch '/home/:id', to:'pages#update'
-  delete '/home/:id', to: 'pages#destroy'
-  post '/home/search', to: 'pages#search'
+  get '/', to:'pages#index'
+  get '/new', to:'pages#new'
+  post '/' , to:'pages#create'
+  get '/:id', to: 'pages#show'
+  get '/:id/edit', to: 'pages#edit'
+  patch '/:id', to:'pages#update'
+  delete '/:id', to: 'pages#destroy'
+  post '/search', to: 'pages#search'
 
   post '/orders', to: 'orders#create' 
   get '/orders/:id', to: 'orders#show'
