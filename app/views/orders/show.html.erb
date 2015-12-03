@@ -1,5 +1,17 @@
 <div class="gutter-20">
    <div class="col-centered col-lg-12">
+   <table class="table">
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>  
+    <% @order.carted_products.each do |carted_product| %>
+    <tr>
+      <td>carted_product.product.name</td>
+      <td>carted_product.qty</td>
+    </tr>
+   </table>
     <h1>Thank you for your order!</h1>
     <h2>Order No: <%= @order.id %> </h2>
     <p>Product Name: <%= @order.product.name %></p>

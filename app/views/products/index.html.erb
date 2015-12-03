@@ -1,0 +1,39 @@
+
+<h1>Product List</h1>
+<p><%= link_to "Show All", "/" %> | <%= link_to "Discount", "/?view=discounted" %> |  <%= link_to "Lowest to Highest", "/?view=order_ny_price" %> | <%= link_to "Highest to Lowest", "/?view=order_by_price_desc" %> | <%= link_to "random", "/random" %> </p>
+<p>
+  <% @categories.each do |category| %>
+  <%= link_to category.name , "/products/?category=#{category.name}" %> |
+  <% end %>
+  </p>
+  <div class="row gutter-10">
+  <% @products.each do |product| %>
+
+  <ul class="col-xs-12 col-sm-4 col-md-3 col-lg-3 ">
+
+    <li class="productSet" value="<% product.categories.each do |category| %><%= category.name.downcase %><% end %>" >
+
+ 
+<% if product.images.first %>
+<a href="/products/<%= "#{product.id}" %>"><img class="img-responsive" src="<%= product.images.first.image_url %>"></a>
+<% end %>
+
+    <h1 class="p_title"><%= link_to product.name, "/products/#{product.id}" %>
+</h1>
+    
+    <div class="p_price"><p>Price:$<%=product.price %></p></div>
+    <div class="p_desc"><p><%=product.description %></p></div>
+
+    <% product.categories.each do |category| %>  
+    <div class="p_category" value="<%= category.name.downcase %>"><p><%= category.name %></p></div>
+      <% end %>    
+
+
+    </li>
+
+  </ul>
+
+
+  <% end %>
+</div>
+

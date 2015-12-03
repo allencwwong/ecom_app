@@ -1,16 +1,21 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#index"  
-  get '/', to:'pages#index'
-  get '/new', to:'pages#new'
-  post '/' , to:'pages#create'
-  get '/:id', to: 'pages#show'
-  get '/:id/edit', to: 'pages#edit'
-  patch '/:id', to:'pages#update'
-  delete '/:id', to: 'pages#destroy'
-  post '/search', to: 'pages#search'
+  root to: "products#index"  
+  # get '/', to: 'products#index'
+  get '/products', to:'products#index'
+  get '/new', to:'products#new'
+  post '/products' , to:'products#create'
+  get '/products/:id', to: 'products#show'
+  get '/products:id/edit', to: 'products#edit'
+  patch '/products:id', to:'products#update'
+  delete '/products:id', to: 'products#destroy'
+  post '/search', to: 'products#search'
 
-  post '/orders', to: 'orders#create' 
+  get '/carted_products', to: 'carted_products#index'
+  post '/carted_products', to: 'carted_products#create'  
+
+  # post '/orders', to: 'orders#create' 
+  post '/orders', to: 'orders#create'
   get '/orders/:id', to: 'orders#show'
 
   # The priority is desbased upon order of creation: first created -> highest priority.

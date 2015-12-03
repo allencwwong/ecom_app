@@ -1,0 +1,41 @@
+<div class="gutter-20">
+ <div class="col-centered col-lg-12">
+
+    <h1>Checkout Page</h1>
+
+<table class="table">
+<tr>
+<th>Product No</th>
+<th>Product Name</th>
+<th>Qty</th>
+<th>Price</th>
+<th>Total</th>
+<th>Remove</th>
+</tr>
+    <% @carted_products.each do |cartedproduct| %>
+    <tr>
+        <td><%= cartedproduct.product.id %></td>
+        <td><%= cartedproduct.product.name %></td>
+        <td><%= cartedproduct.qty %></td>
+        <td>$<%= cartedproduct.product.price %></td>
+        <td>$<%= @product_total = @price.to_i * cartedproduct.qty.to_i %></td> 
+        <td><%= link_to "Remove Product(s)", "/carted_products/#{carted_product.id}", method: :delete %></td>
+    </tr>
+    <% end %>
+</table>    
+    <table>
+        <tr>
+            <td>Subtotal:</td>
+            <td><h3>$<%= @subtotal %></h3></td>
+        </tr>
+        <tr>
+            <td><h3>Tax @ 9%: </h3></td>
+            <td><h3>$</h3></td>
+        </tr>
+        <tr>   
+            <td><h1>Total:</h1></td>
+            <td><h1>$</h1></td>
+        </tr>
+    </table>
+    <button><%= link_to "Confirm and Buy", "/orders", method: :post %></button>
+</div>

@@ -27,9 +27,9 @@
     <p>Created On: <%= @product.friendly_created_at %></p>
 
 <!--     Buy now button  -->
-<%= form_tag '/CartedProducts', { class: 'form-class', id: 'form-id', role: 'form', method: 'post' } do %>
-    <%= hidden_field_tag :add_product , @product.id %>
-     <%= hidden_field_tag :price , @product.price %>    
+<%= form_tag '/carted_products', { class: 'form-class', id: 'form-id', role: 'form', method: 'post' } do %>
+    <%= hidden_field_tag :add_product , @carted_product.id %>
+     <%= hidden_field_tag :price , @carted_product.price %>    
     <%= label_tag :add_qty, "Enter Qty" %>
     <%= text_field_tag :add_qty %>
     <a href="#"><button>Add to Cart</button></a>
@@ -37,7 +37,7 @@
     <% end %>
 <!--     End of buy now button   -->
 
-    <%= link_to "Edit", "/#{@product.id}/edit" %> | <%= link_to "Delete", "/#{@product.id}", method: :delete %>
+    <%= link_to "Edit", "/products/#{@product.id}/edit" %> | <%= link_to "Delete", "/#{@product.id}", method: :delete %>
     </div> 
    </div> 
 
